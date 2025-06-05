@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Layout, Drawer, Button, Menu } from "antd";
+import { Layout, Drawer, Button } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { useResponsive } from "../helpers/responsive";
 import Logo from "../assets/logo.png";
+import { openWhatsApp } from "./openWhatsApp";
 
 const { Header } = Layout;
 
@@ -11,20 +12,7 @@ const Navbar = () => {
   const { isMobile, isTablet } = useResponsive();
   const isSmallScreen = isMobile || isTablet;
 
-  const menuItems = [
-    { key: "hero", label: "Home" },
-    { key: "features", label: "Faq" },
-    { key: "testimonials", label: "Our Community" },
-    { key: "contact", label: "Contact" },
-  ];
-
-  const handleClick = (e) => {
-    const section = document.getElementById(e.key);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-    setOpen(false);
-  };
+  const menuItems = ["Home", "Faq", "Our Community", "Contact"];
 
   return (
     <Header
@@ -64,16 +52,23 @@ const Navbar = () => {
             placement="left"
             onClose={() => setOpen(false)}
             open={open}
-            width="70%" // 👈 ini kuncinya
+            width="70%"
             bodyStyle={{ padding: "1rem 0" }}
           >
-            <Menu
-              mode="vertical"
-              onClick={handleClick}
-              items={menuItems}
-              className="menu-item"
-              style={{ border: "none" }}
-            />
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              {menuItems.map((item, index) => (
+                <li
+                  key={index}
+                  style={{
+                    padding: "12px 20px",
+                    fontWeight: 500,
+                    color: "#0B51D5",
+                  }}
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
             <div style={{ padding: 10 }}>
               <Button
                 type="primary"
@@ -84,6 +79,7 @@ const Navbar = () => {
                   marginTop: 16,
                   fontWeight: "bold",
                 }}
+                onClick={() => openWhatsApp()}
               >
                 Order Now
               </Button>
@@ -95,21 +91,15 @@ const Navbar = () => {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "1rem",
-            marginRight: "1rem",
+            gap: "1.5rem",
+            marginRight: "1.5rem",
+            color: "#0B51D5",
+            fontWeight: 500,
           }}
         >
-          <Menu
-            mode="horizontal"
-            onClick={handleClick}
-            items={menuItems}
-            className="custom-menu"
-            style={{
-              backgroundColor: "#FFE034",
-              borderBottom: "none",
-              fontWeight: 500,
-            }}
-          />
+          {menuItems.map((item, index) => (
+            <span key={index}>{item}</span>
+          ))}
           <Button
             type="primary"
             style={{
@@ -119,6 +109,7 @@ const Navbar = () => {
               height: 36,
               padding: "0 24px",
             }}
+            onClick={() => openWhatsApp()}
           >
             Order Now
           </Button>
