@@ -21,7 +21,7 @@ const Diskon = () => {
           borderRadius: 30
         }}
       >
-        <p className="text-secondary">Join Sekarang!</p>
+        <p className="text-secondary">Join Sekarang!!</p>
       </Button>
     </div>
   );
