@@ -10,7 +10,8 @@ const Diskon = () => {
         textAlign: "center",
       }}
     >
-      <h1 style={{ marginBottom: "1rem" }} className="text-primary">Khusus Hari Ini! Diskon 35%</h1>
+      <div>
+        <h1 style={{ marginBottom: "1rem" }} className="text-primary">Khusus Hari Ini! Diskon 35%</h1>
       <Button
         type="primary"
         className="background-primary"
@@ -23,6 +24,7 @@ const Diskon = () => {
       >
         <p className="text-secondary">Join Sekarang!!</p>
       </Button>
+      </div>
     </div>
   );
 };

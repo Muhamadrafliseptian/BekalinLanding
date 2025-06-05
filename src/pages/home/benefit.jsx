@@ -2,12 +2,18 @@ import React from "react";
 import { Row, Col } from "antd";
 import BackgroundImage from "../../assets/home/benefit/bg.png";
 import Food from "../../assets/home/benefit/1.png";
+import { useResponsive } from "../../helpers/responsive";
+import BackgroundResponsive from "../../assets/home/hero/bg.png";
 
 const Benefit = () => {
+  const {isMobile, isTablet, isDesktop} = useResponsive()
+  const imageBackground = isMobile || isTablet ? BackgroundResponsive : BackgroundImage
+  const textColorCondition = isMobile || isTablet ? 'text-secondary' : 'text-third'
+  const mobileCondition = isMobile || isTablet ? 'background-secondary text-third' : 'background-third text-secondary'
   return (
     <div
       style={{
-        backgroundImage: `url(${BackgroundImage})`,
+        backgroundImage: `url(${imageBackground})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         padding: "4rem 2rem",
@@ -17,9 +23,8 @@ const Benefit = () => {
       <div>
         <Row gutter={[24, 24]} align="top" justify="space-between">
           <Col xs={24} md={8}>
-            <h2 className="text-third" style={{ fontWeight: "700", fontSize: '30px' }}>
+            <h2 className={textColorCondition} style={{ fontWeight: "700", fontSize: '30px', textAlign: isMobile ? 'center' : 'start' }}>
               Daripada Pesan Online
-              <br />
               Tapi malah...
             </h2>
             <div
@@ -31,20 +36,20 @@ const Benefit = () => {
               }}
             >
               {[
-                "❗ Nunggunya Lama",
-                "❗ Ongkir mahal",
-                "❗ Harga makin naik",
-                "❗ Bingung Cari Menu",
-                "❗ Bisa-bisa zonk",
+                "‼️ Nunggunya Lama",
+                "‼️ Ongkir mahal",
+                "‼️ Harga makin naik",
+                "‼️ Bingung Cari Menu",
+                "‼️ Bisa-bisa zonk",
               ].map((text, index) => (
                 <div
                   key={index}
-                  className="text-secondary background-third"
+                  className={mobileCondition}
                   style={{
                     fontWeight: 600,
                     padding: "0.4rem 1rem",
                     borderRadius: "8px",
-                    textAlign: "center",
+                    textAlign: isMobile ? "center" : 'start',
                   }}
                 >
                   {text}
@@ -55,7 +60,7 @@ const Benefit = () => {
 
           {/* Tengah */}
           <Col xs={24} md={8}>
-            <div style={{ textAlign: "center", marginTop: "5rem" }}>
+            <div style={{ textAlign: "center", marginTop: isMobile ? "0" : "5rem" }}>
               <img
                 src={Food}
                 alt="food"
@@ -66,8 +71,8 @@ const Benefit = () => {
 
           {/* Kanan */}
           <Col xs={24} md={8}>
-            <div style={{ textAlign: "right", marginTop: "10rem" }}>
-              <h2 className="text-secondary" style={{ fontWeight: "700", fontSize: '30px' }}>
+            <div style={{ textAlign: "right", marginTop: isMobile ? "0" : "10rem" }}>
+              <h2 className="text-secondary" style={{ fontWeight: "700", fontSize: '30px', textAlign: isMobile ? 'center' : 'start' }}>
                 Mending andelin
                 <br />
                 Bekalin aja!

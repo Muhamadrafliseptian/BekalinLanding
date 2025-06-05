@@ -44,7 +44,7 @@ const Faq = () => {
         padding: "60px 20px",
       }}
     >
-      <div className="background-third" style={{ borderRadius: 30 }}>
+      <div className="background-third" style={{ borderRadius: 30, padding: 20 }}>
         <Row justify="center">
           <Col xs={24} md={24} lg={22}>
             <Title
