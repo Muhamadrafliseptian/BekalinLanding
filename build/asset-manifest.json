@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.62891f5d.css",
-    "main.js": "/static/js/main.ab012b42.js",
+    "main.css": "/static/css/main.e4f0f6d0.css",
+    "main.js": "/static/js/main.e5f5c372.js",
     "static/js/453.49699edd.chunk.js": "/static/js/453.49699edd.chunk.js",
-    "static/media/1.png": "/static/media/1.cababd9bd7a743d03d12.png",
+    "static/media/1.png": "/static/media/1.f36371028a5d9bc52d58.png",
+    "static/media/2.png": "/static/media/2.160ca335f82737d55913.png",
+    "static/media/bg2.png": "/static/media/bg2.450b278f117a2bcc8088.png",
     "static/media/bg.png": "/static/media/bg.862c36c1766477f26ffa.png",
     "static/media/goldplay.otf": "/static/media/goldplay.d6461af0285828cbe91f.otf",
     "static/media/logo.png": "/static/media/logo.99144376540e2e1dd3b9.png",
     "index.html": "/index.html",
-    "main.62891f5d.css.map": "/static/css/main.62891f5d.css.map",
-    "main.ab012b42.js.map": "/static/js/main.ab012b42.js.map",
+    "main.e4f0f6d0.css.map": "/static/css/main.e4f0f6d0.css.map",
+    "main.e5f5c372.js.map": "/static/js/main.e5f5c372.js.map",
     "453.49699edd.chunk.js.map": "/static/js/453.49699edd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.62891f5d.css",
-    "static/js/main.ab012b42.js"
+    "static/css/main.e4f0f6d0.css",
+    "static/js/main.e5f5c372.js"
   ]
 }

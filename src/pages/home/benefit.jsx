@@ -16,7 +16,6 @@ const Benefit = () => {
     >
       <div>
         <Row gutter={[24, 24]} align="top" justify="space-between">
-          {/* Kiri */}
           <Col xs={24} md={8}>
             <h2 className="text-third" style={{ fontWeight: "700", fontSize: '30px' }}>
               Daripada Pesan Online
@@ -27,7 +26,7 @@ const Benefit = () => {
               style={{
                 marginTop: "1.5rem",
                 display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)", // 2 kolom seimbang
+                gridTemplateColumns: "repeat(2, 1fr)",
                 gap: "0.5rem",
               }}
             >
