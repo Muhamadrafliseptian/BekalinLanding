@@ -34,13 +34,13 @@ const FoodMenu = () => {
               style={{
                 borderRadius: 12,
                 backgroundColor: "#E46119",
-                padding: '30px',
+                padding: '5px',
                 height: 320,
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                border: 'none'
               }}
-              bodyStyle={{ padding: 0 }}
             >
               <img
                 src={menu.image}
