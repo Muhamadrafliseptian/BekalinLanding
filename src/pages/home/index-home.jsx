@@ -1,4 +1,6 @@
+import Benefit from "./benefit";
 import Diskon from "./diskon";
+import FoodMenu from "./food-menu";
 import Hero from "./hero";
 import Promo from "./promo";
 const HomePage = () => {
@@ -7,6 +9,8 @@ const HomePage = () => {
       <Hero />
       <Diskon />
       <Promo />
+      <FoodMenu/>
+      <Benefit/>
     </>
   );
 };
