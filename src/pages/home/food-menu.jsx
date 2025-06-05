@@ -34,7 +34,7 @@ const FoodMenu = () => {
               style={{
                 borderRadius: 12,
                 backgroundColor: "#E46119",
-                padding: 30,
+                padding: '30px',
                 height: 320,
                 display: "flex",
                 justifyContent: "center",
