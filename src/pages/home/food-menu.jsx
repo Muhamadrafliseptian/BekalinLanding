@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Card, Typography } from "antd";
-import menuImage from "../../assets/home/menu/1.png"; // pastikan path-nya sesuai
+import menuImage from "../../assets/home/menu/1.png"; // pastikan path benar
 
 const { Text } = Typography;
 
@@ -26,26 +26,41 @@ const FoodMenu = () => {
         textAlign: "center",
       }}
     >
-      <Row gutter={[32, 32]} justify="center">
+      <Row gutter={[24, 24]} justify="center">
         {menuList.map((menu) => (
-          <Col xs={24} sm={12} md={8} lg={6} key={menu.id}>
+          <Col
+            key={menu.id}
+            xs={24}
+            sm={12}
+            md={12}
+            lg={8}
+            xl={6}
+            style={{ display: "flex", justifyContent: "center" }}
+          >
             <Card
               hoverable
               style={{
+                width: "100%",
+                maxWidth: 300,
                 borderRadius: 12,
                 backgroundColor: "#E46119",
-                padding: '5px',
-                height: 320,
+                border: "none",
+                padding: 12,
                 display: "flex",
-                justifyContent: "center",
+                flexDirection: "column",
                 alignItems: "center",
-                border: 'none'
               }}
+              bodyStyle={{ padding: 0 }}
             >
               <img
                 src={menu.image}
                 alt={menu.label}
-                style={{ width: "100%", borderRadius: 10 }}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: 10,
+                  marginBottom: 12,
+                }}
               />
               <Text style={{ color: "black", fontWeight: 500 }}>
                 {menu.label}
