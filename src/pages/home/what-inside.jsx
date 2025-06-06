@@ -43,29 +43,41 @@ const WhatInside = () => {
             <Row gutter={[16, 32]}>
               <Col span={12}>
                 <div style={{ fontWeight: "bold" }}>
-                  <p className="text-fourth">
-                    <span style={{ fontSize: titleFont }}>Protein Hewani:</span>
-                    <br />
-                    <span
-                      className="text-fourth"
-                      style={{ fontWeight: "400", fontSize: bodyFont }}
-                    >
-                      Daging Ayam, Sapi, Seafood (Udang/Cumi/Ikan)
-                    </span>
+                  <h2
+                    className="text-fourth"
+                    style={{ fontSize: titleFont, margin: 0 }}
+                  >
+                    Protein Hewani:
+                  </h2>
+                  <p
+                    className="text-fourth"
+                    style={{
+                      fontWeight: "400",
+                      fontSize: bodyFont,
+                      marginTop: 0,
+                    }}
+                  >
+                    Daging Ayam, Sapi, Seafood (Udang/Cumi/Ikan)
                   </p>
                 </div>
               </Col>
               <Col span={12}>
                 <div style={{ fontWeight: "bold" }}>
-                  <p className="text-fourth">
-                    <span style={{ fontSize: titleFont }}>Sayuran:</span>
-                    <br />
-                    <span
-                      className="text-fourth"
-                      style={{ fontWeight: "400", fontSize: bodyFont }}
-                    >
-                      Brokoli, Sawi, Wortel, Kangkung, dll
-                    </span>
+                  <h2
+                    className="text-fourth"
+                    style={{ fontSize: titleFont, margin: 0 }}
+                  >
+                    Sayuran:
+                  </h2>
+                  <p
+                    className="text-fourth"
+                    style={{
+                      fontWeight: "400",
+                      fontSize: bodyFont,
+                      marginTop: 0,
+                    }}
+                  >
+                    Brokoli, Sawi, Wortel, Kangkung, dan sebagainya{" "}
                   </p>
                 </div>
               </Col>
@@ -91,7 +103,7 @@ const WhatInside = () => {
               <div
                 style={{
                   fontWeight: "bold",
-                  marginTop: 150,
+                  marginTop: isMobile ? 0 : 150,
                   maxWidth: isMobile ? 1440 : 200,
                   textAlign: "start",
                 }}
@@ -131,33 +143,42 @@ const WhatInside = () => {
             <Row gutter={[16, 32]}>
               <Col span={12}>
                 <div style={{ fontWeight: "bold" }}>
-                  <p className="text-fourth">
-                    <span style={{ fontSize: titleFont }}>
-                      Karbohidrat Kompleks:
-                    </span>
-                    <br />
-                    <span
-                      className="text-fourth"
-                      style={{ fontWeight: "400", fontSize: bodyFont }}
-                    >
-                      Nasi Putih, Nasi Merah, Mie/Pasta, Kentang, dll
-                    </span>
+                  <h2
+                    className="text-fourth"
+                    style={{ fontSize: titleFont, margin: 0 }}
+                  >
+                    Karbohidrat Kompleks:{" "}
+                  </h2>
+                  <p
+                    className="text-fourth"
+                    style={{
+                      fontWeight: "400",
+                      fontSize: bodyFont,
+                      marginTop: 0,
+                    }}
+                  >
+                    Nasi Putih, Nasi Merah, Mie/Pasta, Kentang, dll
                   </p>
                 </div>
               </Col>
               <Col span={12}>
+
                 <div style={{ fontWeight: "bold" }}>
-                  <p className="text-fourth">
-                    <span style={{ fontSize: titleFont }}>
-                      Special Request/Add On:
-                    </span>
-                    <br />
-                    <span
-                      className="text-fourth"
-                      style={{ fontWeight: "400", fontSize: bodyFont }}
-                    >
-                      Healthier (Nasi Merah), Extra Karbo, Extra Protein
-                    </span>
+                  <h2
+                    className="text-fourth"
+                    style={{ fontSize: titleFont, margin: 0 }}
+                  >
+                    Special Request/Add On:
+                  </h2>
+                  <p
+                    className="text-fourth"
+                    style={{
+                      fontWeight: "400",
+                      fontSize: bodyFont,
+                      marginTop: 0,
+                    }}
+                  >
+                    Healthier (Nasi Merah), Extra Karbo, Extra Protein
                   </p>
                 </div>
               </Col>

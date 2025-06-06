@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Card, Typography } from "antd";
-import menuImage from "../../assets/home/menu/1.png"; // pastikan path benar
+import menuImage from "../../assets/home/menu/1.png";
+import { useResponsive } from "../../helpers/responsive";
 
 const { Text } = Typography;
 
@@ -18,6 +19,7 @@ const menuList = [
 ];
 
 const FoodMenu = () => {
+  const { isTablet, isMobile, isDesktop } = useResponsive();
   return (
     <div
       style={{
@@ -30,7 +32,7 @@ const FoodMenu = () => {
         {menuList.map((menu) => (
           <Col
             key={menu.id}
-            xs={24}
+            xs={isMobile ? 12 : 24} 
             sm={12}
             md={12}
             lg={8}

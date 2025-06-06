@@ -2,38 +2,44 @@ import React from "react";
 import { Row, Col } from "antd";
 import BackgroundImage from "../../assets/home/benefit/bg2.png";
 import WhyUsImage from "../../assets/home/benefit/2.png";
+import { useResponsive } from "../../helpers/responsive";
+import Image3 from "../../assets/home/benefit/3.png";
+import Image4 from "../../assets/home/benefit/4.png";
+import Image5 from "../../assets/home/benefit/5.png";
+import Image6 from "../../assets/home/benefit/6.png";
 
 const features = [
   {
-    icon: "🍱",
+    icon: Image3,
     title: "Lebih Praktis",
     desc: "Bebas ubah alamat untuk kebutuhanmu",
   },
   {
-    icon: "💰",
+    icon: Image4,
     title: "Lebih Hemat",
     desc: "Mulai dari 20 ribuan untuk makan harianmu tanpa biaya ongkos kirim (GRATIS ONGKIR!)",
   },
   {
-    icon: "📊",
+    icon: Image6,
     title: "Menu Variatif & Bergizi",
     desc: "Penyediaan 1000+ varian menu dan disusun dengan gizi seimbang, cocok jadi bekal sehat untuk rutinitasmu!",
   },
   {
-    icon: "⚙️",
+    icon: Image5,
     title: "Higienis",
     desc: "Setiap hidangan diawasi dengan standar SOP ketat sesuai standar keamanan",
   },
 ];
 
 const WhyUs = () => {
+  const { isMobile, isTablet } = useResponsive();
   return (
     <div
       style={{
         backgroundImage: `url(${BackgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        padding: "4rem 2rem",
+        padding: "4rem 1.5rem",
         textAlign: "center",
       }}
     >
@@ -41,23 +47,79 @@ const WhyUs = () => {
         style={{
           display: "inline-block",
           backgroundColor: "#F15A24",
-          color: "#fff",
           padding: "0.8rem 2rem",
           borderRadius: "12px",
           fontWeight: "bold",
           fontSize: "1.8rem",
           marginBottom: "3rem",
         }}
+        className="text-secondary"
       >
         Kenapa Pilih Bekelin?
       </h2>
 
-      <Row gutter={[32, 32]} align="middle" justify="center">
-        {/* Left Features */}
-        <Col xs={24} md={8}>
-          <Row gutter={[16, 16]} justify="center">
-            {features.slice(0, 2).map((item, index) => (
-              <Col xs={12} key={index}>
+      {isMobile || isTablet ? (
+        // Mobile/Tablet Layout
+        <Row gutter={[16, 16]} justify="center">
+          {features.map((item, index) => (
+            <Col xs={12} key={index}>
+              <div style={{ textAlign: "center" }}>
+                <div
+                  style={{
+                    backgroundColor: "#F15A24",
+                    fontSize: "2.5rem",
+                    borderRadius: 12,
+                    padding: "0.6 0",
+                    marginBottom: "1rem",
+                  }}
+                  className="text-secondary"
+                >
+                  <img
+                    src={item.icon}
+                    alt="data"
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
+                <div style={{ fontWeight: "bold" }} className="text-third">
+                  {item.title}
+                </div>
+                <div style={{ fontSize: "10px" }} className="text-third">
+                  {item.desc}
+                </div>
+              </div>
+            </Col>
+          ))}
+
+          {/* Gambar di bawah semua cards */}
+          <Col xs={24}>
+            <div style={{ textAlign: "center", marginTop: "3rem" }}>
+              <img
+                src={WhyUsImage}
+                alt="Kenapa Pilih Bekelin"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  borderRadius: "1rem",
+                  marginTop: "2rem",
+                }}
+              />
+            </div>
+          </Col>
+        </Row>
+      ) : (
+        <Row gutter={[32, 32]} align="middle" justify="center">
+          {/* Left Features */}
+          <Col xs={24} md={8}>
+            <Row
+              gutter={[16, 16]}
+              style={{ display: "flex", alignItems: "flex-start" }}
+            >
+              {/* Card 1 (kiri bawah) */}
+              <Col xs={12} style={{ marginTop: "7rem", marginBottom: "7rem" }}>
                 <div style={{ textAlign: "center" }}>
                   <div
                     style={{
@@ -65,70 +127,125 @@ const WhyUs = () => {
                       color: "#fff",
                       fontSize: "2.5rem",
                       borderRadius: 12,
-                      padding: "1.5rem 0",
+                      padding: "0.6rem 0",
                       marginBottom: "1rem",
                     }}
                   >
-                    {item.icon}
+                    <img
+                      src={features[0].icon}
+                      alt="data"
+                      style={{
+                        width: "100px",
+                        height: "100px",
+                        objectFit: "contain",
+                      }}
+                    />
                   </div>
-                  <div style={{ fontWeight: "bold", color: "#000" }}>
-                    {item.title}
+                  <div style={{ fontWeight: "bold" }} className="text-third">
+                    {features[0].title}
                   </div>
-                  <div style={{ fontSize: "12px", color: "#333" }}>
-                    {item.desc}
+                  <div style={{ fontSize: "10px" }} className="text-third">
+                    {features[0].desc}
                   </div>
                 </div>
               </Col>
-            ))}
-          </Row>
-        </Col>
 
-        {/* Center Image */}
-        <Col xs={24} md={8}>
-          <div style={{ textAlign: "center" }}>
-            <img
-              src={WhyUsImage}
-              alt="Kenapa Pilih Bekelin"
-              style={{
-                maxWidth: "100%",
-                height: "auto",
-                borderRadius: "1rem",
-                marginTop: "1rem",
-              }}
-            />
-          </div>
-        </Col>
-
-        {/* Right Features */}
-        <Col xs={24} md={8}>
-          <Row gutter={[16, 16]} justify="center">
-            {features.slice(2).map((item, index) => (
-              <Col xs={12} key={index}>
+              {/* Card 2 (kanan atas) */}
+              <Col xs={12}>
                 <div style={{ textAlign: "center" }}>
                   <div
                     style={{
                       backgroundColor: "#F15A24",
-                      color: "#fff",
                       fontSize: "2.5rem",
                       borderRadius: 12,
-                      padding: "1.5rem 0",
+                      padding: "0.6rem 0",
                       marginBottom: "1rem",
                     }}
+                    className="text-secondary"
                   >
-                    {item.icon}
+                    <img
+                      src={features[1].icon}
+                      alt="data"
+                      style={{
+                        width: "100px",
+                        height: "100px",
+                        objectFit: "contain",
+                      }}
+                    />
                   </div>
-                  <div style={{ fontWeight: "bold", color: "#000" }}>
-                    {item.title}
+                  <div style={{ fontWeight: "bold" }} className="text-third">
+                    {features[1].title}
                   </div>
-                  <div style={{ fontSize: "12px", color: "#333" }}>
-                    {item.desc}
+                  <div style={{ fontSize: "10px" }} className="text-third">
+                    {features[1].desc}
                   </div>
                 </div>
               </Col>
-            ))}
-          </Row>
-        </Col>
-      </Row>
+            </Row>
+          </Col>
+
+          {/* Center Image */}
+          <Col xs={24} md={8}>
+            <div style={{ textAlign: "center" }}>
+              <img
+                src={WhyUsImage}
+                alt="Kenapa Pilih Bekelin"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  borderRadius: "1rem",
+                  marginTop: "8rem",
+                }}
+              />
+            </div>
+          </Col>
+
+          {/* Right Features */}
+          <Col xs={24} md={8}>
+            <Row gutter={[16, 16]} justify="center">
+              {features.slice(2).map((item, index) => (
+                <Col
+                  xs={12}
+                  key={index}
+                  style={{
+                    marginTop: index === 1 ? "7rem" : 0,
+                    marginBottom: index === 1 ? "7rem" : 0,
+                  }}
+                >
+                  <div style={{ textAlign: "center" }}>
+                    <div
+                      className="text-secondary"
+                      style={{
+                        backgroundColor: "#F15A24",
+                        fontSize: "2.5rem",
+                        borderRadius: 12,
+                        padding: "0.6rem 0",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      <img
+                        src={item.icon}
+                        alt="data"
+                        style={{
+                          width: "100px",
+                          height: "100px",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </div>
+                    <div style={{ fontWeight: "bold" }} className="text-third">
+                      {item.title}
+                    </div>
+                    <div style={{ fontSize: "10px" }} className="text-third">
+                      {item.desc}
+                    </div>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          </Col>
+        </Row>
+      )}
     </div>
   );
 };

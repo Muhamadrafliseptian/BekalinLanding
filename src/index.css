@@ -1,7 +1,23 @@
 body {
   margin: 0;
   background-color: #FFE034;
+  font-family: 'Goldplay', sans-serif !important;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+button,
+a,
+div {
+  font-family: 'Goldplay', sans-serif !important;
+}
+
 .text-primary {
   color: #0B51D5;
 }
@@ -10,11 +26,11 @@ body {
   color: #FFE034;
 }
 
-.text-third{
+.text-third {
   color: #E46119
 }
 
-.text-fourth{
+.text-fourth {
   color: #F5511C
 }
 
@@ -40,3 +56,6 @@ body {
   font-weight: bold;
 }
 
+.icon-image {
+  
+}
