@@ -15,7 +15,7 @@ const HomePage = () => {
       <Promo />
       <FoodMenu/>
       <Benefit/>
-      {/* <WhyUs/> */}
+      <WhyUs/>
       <WhatInside/>
       <Testimoni/>
       <Faq/>
