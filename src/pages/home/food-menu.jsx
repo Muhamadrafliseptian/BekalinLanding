@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Card, Typography } from "antd";
 import menuImage from "../../assets/home/menu/1.png";
+import menuImage2 from "../../assets/home/menu/2.png";
 import { useResponsive } from "../../helpers/responsive";
 
 const { Text } = Typography;
@@ -14,7 +15,7 @@ const menuList = [
   {
     id: 2,
     label: "Menu batch",
-    image: menuImage,
+    image: menuImage2,
   },
 ];
 
@@ -62,12 +63,12 @@ const FoodMenu = () => {
                   width: "100%",
                   height: "auto",
                   borderRadius: 10,
-                  marginBottom: 12,
+                  // marginBottom: 12,
                 }}
               />
-              <Text style={{ color: "black", fontWeight: 500 }}>
+              {/* <Text style={{ color: "black", fontWeight: 500 }}>
                 {menu.label}
-              </Text>
+              </Text> */}
             </Card>
           </Col>
         ))}
