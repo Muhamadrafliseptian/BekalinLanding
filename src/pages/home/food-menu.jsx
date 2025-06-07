@@ -1,10 +1,8 @@
-import React from "react";
-import { Row, Col, Card, Typography } from "antd";
+import React, { useState } from "react";
+import { Row, Col, Card, Modal } from "antd";
 import menuImage from "../../assets/home/menu/1.png";
 import menuImage2 from "../../assets/home/menu/2.png";
 import { useResponsive } from "../../helpers/responsive";
-
-const { Text } = Typography;
 
 const menuList = [
   {
@@ -20,7 +18,18 @@ const menuList = [
 ];
 
 const FoodMenu = () => {
-  const { isMobile  } = useResponsive();
+  const { isMobile } = useResponsive();
+
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedLabel, setSelectedLabel] = useState("");
+
+  const handleImageClick = (image, label) => {
+    setSelectedImage(image);
+    setSelectedLabel(label);
+    setModalVisible(true);
+  };
+
   return (
     <div
       style={{
@@ -33,7 +42,7 @@ const FoodMenu = () => {
         {menuList.map((menu) => (
           <Col
             key={menu.id}
-            xs={isMobile ? 12 : 24} 
+            xs={isMobile ? 12 : 24}
             sm={12}
             md={12}
             lg={8}
@@ -55,6 +64,7 @@ const FoodMenu = () => {
               }}
               data-aos="fade-up"
               bodyStyle={{ padding: 0 }}
+              onClick={() => handleImageClick(menu.image, menu.label)}
             >
               <img
                 src={menu.image}
@@ -63,16 +73,28 @@ const FoodMenu = () => {
                   width: "100%",
                   height: "auto",
                   borderRadius: 10,
-                  // marginBottom: 12,
+                  cursor: "pointer",
                 }}
               />
-              {/* <Text style={{ color: "black", fontWeight: 500 }}>
-                {menu.label}
-              </Text> */}
             </Card>
           </Col>
         ))}
       </Row>
+
+      <Modal
+        open={modalVisible}
+        onCancel={() => setModalVisible(false)}
+        footer={null}
+        centered
+        title={selectedLabel}
+        width={400} // ukuran ideal
+      >
+        <img
+          src={selectedImage}
+          alt={selectedLabel}
+          style={{ width: "100%", height: "auto", borderRadius: 10 }}
+        />
+      </Modal>
     </div>
   );
 };
