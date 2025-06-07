@@ -56,6 +56,23 @@ div {
   font-weight: bold;
 }
 
-.icon-image {
-  
+/* Ubah seluruh background modal */
+.custom-modal .ant-modal-content {
+  background-color: #E46119;
+}
+
+/* Ubah background header (title) */
+.custom-modal .ant-modal-header {
+  background-color: #E46119;
+  border-bottom: none; /* Opsional, untuk hilangkan garis bawah */
+}
+
+/* Ubah warna teks title jika perlu */
+.custom-modal .ant-modal-title {
+  color: #FFE034;
+}
+
+/* Ubah background modal body (opsional jika mau konsisten) */
+.custom-modal .ant-modal-body {
+  background-color: #E46119;
 }

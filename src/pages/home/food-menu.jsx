@@ -86,6 +86,7 @@ const FoodMenu = () => {
         onCancel={() => setModalVisible(false)}
         footer={null}
         centered
+        className="custom-modal"
         title={selectedLabel}
         width={400} // ukuran ideal
       >
