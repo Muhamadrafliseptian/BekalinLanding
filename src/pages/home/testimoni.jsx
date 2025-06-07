@@ -38,10 +38,10 @@ const Testimoni = () => {
         textAlign: "center",
       }}
     >
-      <Title style={{ color: "#E64420", marginBottom: 100 }}>
+      <Title style={{ color: "#E64420", marginBottom: 100 }} data-aos="fade-up">
         Testimonials
       </Title>
-      <Row gutter={[0, 60]} justify="center">
+      <Row gutter={[0, 60]} justify="center" data-aos="fade-down">
         {testimonials.map((item, index) => {
           const isHovered = hoveredIndex === index;
           const backgroundColor = isHovered ? "#0B51D5" : "#E46119";

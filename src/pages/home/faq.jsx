@@ -22,7 +22,7 @@ const faqData = [
   {
     question: "Pengiriman Lunch & Dinner dilakukan pukul berapa?",
     answer:
-      "Untuk pengiriman Senin sampai Jumat, makan dikirim dalam dua sesi terpisah:\nLunch: antara pukul 09.00 – 12.30 WIB\nDinner: antara pukul 15.00 – 18.30 WIB",
+      "Untuk pengiriman Senin sampai Jumat, makan dikirim dalam dua sesi terpisah:\nLunch: antara pukul 09.00 – 12.30 WIB Dinner: antara pukul 15.00 – 18.30 WIB",
   },
   {
     question: "Apakah ada pengiriman saat tanggal merah?",
@@ -40,11 +40,15 @@ const Faq = () => {
   return (
     <div
       className="background-secondary"
+      id="faq"
       style={{
         padding: "60px 20px",
       }}
     >
-      <div className="background-third" style={{ borderRadius: 30, padding: 20 }}>
+      <div
+        className="background-third"
+        style={{ borderRadius: 30, padding: 20 }}
+      >
         <Row justify="center">
           <Col xs={24} md={24} lg={22}>
             <Title
@@ -52,9 +56,10 @@ const Faq = () => {
               style={{
                 textAlign: "center",
                 marginBottom: 40,
-                fontWeight: 'bold',
-                color: "#0B51D5"
+                fontWeight: "bold",
+                color: "#0B51D5",
               }}
+              data-aos="fade-up"
             >
               FAQ
             </Title>
@@ -63,6 +68,7 @@ const Faq = () => {
               bordered={false}
               expandIconPosition="end"
               style={{ background: "transparent" }}
+              data-aos="fade-right"
             >
               {faqData.map((item, index) => (
                 <Panel
@@ -74,10 +80,10 @@ const Faq = () => {
                   key={index}
                   style={{
                     marginBottom: 16,
-                    backgroundColor: "#fff4e3",
                     borderRadius: 8,
-                    border: "1px solid #ffce9f",
+                    border: "none",
                   }}
+                  className="background-secondary"
                 >
                   <Paragraph style={{ margin: 0, color: "#000" }}>
                     <Text strong style={{ color: "#0B51D5" }}>

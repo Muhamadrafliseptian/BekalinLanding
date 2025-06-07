@@ -27,6 +27,7 @@ const WhatInside = () => {
           fontWeight: "bold",
           fontSize: isMobile ? "1.5rem" : "2rem",
         }}
+        data-aos="fade-up"
       >
         Apa Saja isi dalam Bekelin?
       </h2>
@@ -41,11 +42,11 @@ const WhatInside = () => {
         <Col xs={24} md={6} style={{ padding: 0 }}>
           {isMobile ? (
             <Row gutter={[16, 32]}>
-              <Col span={12}>
+              <Col span={12} data-aos="fade-right">
                 <div style={{ fontWeight: "bold" }}>
                   <h2
                     className="text-fourth"
-                    style={{ fontSize: titleFont, margin: 0 }}
+                    style={{ fontSize: titleFont, marginBottom: 5 }}
                   >
                     Protein Hewani:
                   </h2>
@@ -61,11 +62,11 @@ const WhatInside = () => {
                   </p>
                 </div>
               </Col>
-              <Col span={12}>
+              <Col span={12} data-aos="fade-right">
                 <div style={{ fontWeight: "bold" }}>
                   <h2
                     className="text-fourth"
-                    style={{ fontSize: titleFont, margin: 0 }}
+                    style={{ fontSize: titleFont, marginBottom: 5 }}
                   >
                     Sayuran:
                   </h2>
@@ -83,11 +84,11 @@ const WhatInside = () => {
               </Col>
             </Row>
           ) : (
-            <>
-              <div
-                className="text-fourth"
-                style={{ fontWeight: "bold", marginBottom: "2rem" }}
-              >
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "2rem" }}
+              data-aos="fade-right"
+            >
+              <div className="text-fourth" style={{ fontWeight: "bold" }}>
                 <p className="text-fourth">
                   <span style={{ fontSize: titleFont }}>Protein Hewani:</span>
                   <br />
@@ -103,9 +104,10 @@ const WhatInside = () => {
               <div
                 style={{
                   fontWeight: "bold",
-                  marginTop: isMobile ? 0 : 150,
-                  maxWidth: isMobile ? 1440 : 200,
+                  maxWidth: 200,
                   textAlign: "start",
+                  alignSelf: "flex-end",
+                  marginTop: isMobile || isTablet ? 0 : 50
                 }}
               >
                 <p className="text-fourth">
@@ -115,16 +117,16 @@ const WhatInside = () => {
                     className="text-fourth"
                     style={{ fontWeight: "400", fontSize: bodyFont }}
                   >
-                    Brokoli, Sawi, Wortel, Kangkung, dll
+                    Brokoli, Sawi, Wortel, Kangkung, dan sebagainya
                   </span>
                 </p>
               </div>
-            </>
+            </div>
           )}
         </Col>
 
         {/* Gambar */}
-        <Col xs={24} md={10} style={{ textAlign: "center", padding: 0 }}>
+        <Col xs={24} md={10} style={{ textAlign: "center", padding: 0 }} data-aos="fade-up">
           <img
             src={Food}
             alt="Isi Bekelin"
@@ -140,12 +142,12 @@ const WhatInside = () => {
         {/* Kanan */}
         <Col xs={24} md={6} style={{ padding: 0 }}>
           {isMobile ? (
-            <Row gutter={[16, 32]}>
+            <Row gutter={[16, 32]} data-aos="fade-right">
               <Col span={12}>
                 <div style={{ fontWeight: "bold" }}>
                   <h2
                     className="text-fourth"
-                    style={{ fontSize: titleFont, margin: 0 }}
+                    style={{ fontSize: titleFont, marginBottom: 5 }}
                   >
                     Karbohidrat Kompleks:{" "}
                   </h2>
@@ -162,11 +164,10 @@ const WhatInside = () => {
                 </div>
               </Col>
               <Col span={12}>
-
                 <div style={{ fontWeight: "bold" }}>
                   <h2
                     className="text-fourth"
-                    style={{ fontSize: titleFont, margin: 0 }}
+                    style={{ fontSize: titleFont, marginBottom: 5 }}
                   >
                     Special Request/Add On:
                   </h2>
@@ -185,7 +186,7 @@ const WhatInside = () => {
             </Row>
           ) : (
             <>
-              <div style={{ fontWeight: "bold", marginBottom: "2rem" }}>
+              <div style={{ fontWeight: "bold", marginBottom: "2rem" }} data-aos="fade-right">
                 <p className="text-fourth">
                   <span style={{ fontSize: titleFont }}>
                     Karbohidrat Kompleks:
@@ -200,7 +201,7 @@ const WhatInside = () => {
                 </p>
               </div>
 
-              <div style={{ fontWeight: "bold" }}>
+              <div style={{ fontWeight: "bold" }} data-aos="fade-right">
                 <p className="text-fourth">
                   <span style={{ fontSize: titleFont }}>
                     Special Request/Add On:

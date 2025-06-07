@@ -19,7 +19,7 @@ const menuList = [
 ];
 
 const FoodMenu = () => {
-  const { isTablet, isMobile, isDesktop } = useResponsive();
+  const { isMobile  } = useResponsive();
   return (
     <div
       style={{
@@ -52,6 +52,7 @@ const FoodMenu = () => {
                 flexDirection: "column",
                 alignItems: "center",
               }}
+              data-aos="fade-up"
               bodyStyle={{ padding: 0 }}
             >
               <img

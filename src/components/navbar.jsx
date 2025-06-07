@@ -4,6 +4,7 @@ import { MenuOutlined } from "@ant-design/icons";
 import { useResponsive } from "../helpers/responsive";
 import Logo from "../assets/logo.png";
 import { openWhatsApp } from "./openWhatsApp";
+import { useNavigate } from "react-router-dom";
 
 const { Header } = Layout;
 
@@ -11,8 +12,41 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { isMobile, isTablet } = useResponsive();
   const isSmallScreen = isMobile || isTablet;
+  const navigate = useNavigate();
 
-  const menuItems = ["Home", "Faq", "Our Community", "Contact"];
+  const scrollToFaq = () => {
+    const el = document.getElementById("faq");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/#faq");
+    }
+  };
+
+  const handleMenuClick = (item) => {
+    switch (item) {
+      case "Home":
+        if (window.location.pathname === "/") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }, 100);
+        }
+        break;
+      case "Faq":
+        scrollToFaq();
+        break;
+      case "Our Community":
+        window.open("https://healthy-go.id/community/", "_blank");
+        break;
+      default:
+        break;
+    }
+    setOpen(false);
+  };
+
+  const menuItems = ["Home", "Faq", "Our Community"];
 
   return (
     <Header
@@ -30,23 +64,30 @@ const Navbar = () => {
       }}
     >
       <div
-        style={{ display: "flex", alignItems: "center", marginLeft: "30px" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          marginLeft: isMobile ? "5px" : "30px",
+        }}
       >
         <img
           src={Logo}
           alt="Logo"
-          style={{ height: 70, objectFit: "contain" }}
+          style={{ height: 70, objectFit: "contain", cursor: "pointer" }}
+          onClick={() => navigate("/")}
         />
       </div>
 
       {isSmallScreen ? (
         <>
-          <Button
-            type="text"
-            icon={<MenuOutlined style={{ fontSize: 24 }} />}
-            onClick={() => setOpen(true)}
-            style={{ border: "none" }}
-          />
+          <div style={{ marginRight: 15 }}>
+            <Button
+              type="text"
+              icon={<MenuOutlined style={{ fontSize: 24 }} />}
+              onClick={() => setOpen(true)}
+              style={{ border: "none" }}
+            />
+          </div>
           <Drawer
             title="Bekalin"
             placement="left"
@@ -59,10 +100,12 @@ const Navbar = () => {
               {menuItems.map((item, index) => (
                 <li
                   key={index}
+                  onClick={() => handleMenuClick(item)}
                   style={{
                     padding: "12px 20px",
                     fontWeight: 500,
                     color: "#0B51D5",
+                    cursor: "pointer",
                   }}
                 >
                   {item}
@@ -98,7 +141,13 @@ const Navbar = () => {
           }}
         >
           {menuItems.map((item, index) => (
-            <span key={index}>{item}</span>
+            <span
+              key={index}
+              onClick={() => handleMenuClick(item)}
+              style={{ cursor: "pointer" }}
+            >
+              {item}
+            </span>
           ))}
           <Button
             type="primary"

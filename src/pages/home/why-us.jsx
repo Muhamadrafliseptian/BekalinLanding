@@ -53,6 +53,7 @@ const WhyUs = () => {
           fontSize: "1.8rem",
           marginBottom: "3rem",
         }}
+        data-aos="fade-up"
         className="text-secondary"
       >
         Kenapa Pilih Bekelin?
@@ -62,7 +63,7 @@ const WhyUs = () => {
         // Mobile/Tablet Layout
         <Row gutter={[16, 16]} justify="center">
           {features.map((item, index) => (
-            <Col xs={12} key={index}>
+            <Col xs={12} key={index} data-aos="fade-right">
               <div style={{ textAlign: "center" }}>
                 <div
                   style={{
@@ -95,7 +96,7 @@ const WhyUs = () => {
           ))}
 
           {/* Gambar di bawah semua cards */}
-          <Col xs={24}>
+          <Col xs={24} data-aos="fade-up">
             <div style={{ textAlign: "center", marginTop: "3rem" }}>
               <img
                 src={WhyUsImage}
@@ -113,13 +114,13 @@ const WhyUs = () => {
       ) : (
         <Row gutter={[32, 32]} align="middle" justify="center">
           {/* Left Features */}
-          <Col xs={24} md={8}>
+          <Col xs={24} md={8} data-aos="fade-right">
             <Row
               gutter={[16, 16]}
               style={{ display: "flex", alignItems: "flex-start" }}
             >
               {/* Card 1 (kiri bawah) */}
-              <Col xs={12} style={{ marginTop: "7rem", marginBottom: "7rem" }}>
+              <Col xs={12} style={{ marginTop: "7rem", marginBottom: "8rem" }}>
                 <div style={{ textAlign: "center" }}>
                   <div
                     style={{
@@ -185,7 +186,7 @@ const WhyUs = () => {
           </Col>
 
           {/* Center Image */}
-          <Col xs={24} md={8}>
+          <Col xs={24} md={8} data-aos="fade-up">
             <div style={{ textAlign: "center" }}>
               <img
                 src={WhyUsImage}
@@ -201,7 +202,7 @@ const WhyUs = () => {
           </Col>
 
           {/* Right Features */}
-          <Col xs={24} md={8}>
+          <Col xs={24} md={8} data-aos="fade-right">
             <Row gutter={[16, 16]} justify="center">
               {features.slice(2).map((item, index) => (
                 <Col

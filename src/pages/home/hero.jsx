@@ -45,7 +45,7 @@ const Hero = () => {
         gutter={isMobile ? [16, 32] : [0, 0]}
       >
         {/* Text Column */}
-        <Col xs={24} md={12} style={{ textAlign }}>
+        <Col xs={24} md={12} style={{ textAlign }} data-aos="fade-up">
           <h1
             className="text-secondary"
             style={{
@@ -80,6 +80,7 @@ const Hero = () => {
             justifyContent: isMobile ? "flex-end" : "flex-end",
             alignItems: 'center',
           }}
+          data-aos="fade-up"
         >
           <img
             src={HeroImage}
