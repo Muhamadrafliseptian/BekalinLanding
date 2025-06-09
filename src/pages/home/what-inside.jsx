@@ -3,6 +3,7 @@ import { Row, Col } from "antd";
 import Food from "../../assets/home/what-inside/1.png";
 import BackgroundImage from "../../assets/home/what-inside/bg.png";
 import { useResponsive } from "../../helpers/responsive";
+import PrimaryButton from "../../components/button";
 
 const WhatInside = () => {
   const { isDesktop, isMobile, isTablet } = useResponsive();
@@ -107,7 +108,7 @@ const WhatInside = () => {
                   maxWidth: 200,
                   textAlign: "start",
                   alignSelf: "flex-end",
-                  marginTop: isMobile || isTablet ? 0 : 50
+                  marginTop: isMobile || isTablet ? 0 : 50,
                 }}
               >
                 <p className="text-fourth">
@@ -126,7 +127,12 @@ const WhatInside = () => {
         </Col>
 
         {/* Gambar */}
-        <Col xs={24} md={10} style={{ textAlign: "center", padding: 0 }} data-aos="fade-up">
+        <Col
+          xs={24}
+          md={10}
+          style={{ textAlign: "center", padding: 0 }}
+          data-aos="fade-up"
+        >
           <img
             src={Food}
             alt="Isi Bekelin"
@@ -186,7 +192,10 @@ const WhatInside = () => {
             </Row>
           ) : (
             <>
-              <div style={{ fontWeight: "bold", marginBottom: "2rem" }} data-aos="fade-right">
+              <div
+                style={{ fontWeight: "bold", marginBottom: "2rem" }}
+                data-aos="fade-right"
+              >
                 <p className="text-fourth">
                   <span style={{ fontSize: titleFont }}>
                     Karbohidrat Kompleks:
@@ -218,6 +227,9 @@ const WhatInside = () => {
             </>
           )}
         </Col>
+        <div style={{ marginTop: 20 }}>
+          <PrimaryButton message="Pesan Bekalin Sekarang!" />
+        </div>
       </Row>
     </div>
   );

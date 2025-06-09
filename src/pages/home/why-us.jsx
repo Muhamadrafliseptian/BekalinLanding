@@ -7,6 +7,7 @@ import Image3 from "../../assets/home/benefit/3.png";
 import Image4 from "../../assets/home/benefit/4.png";
 import Image5 from "../../assets/home/benefit/5.png";
 import Image6 from "../../assets/home/benefit/6.png";
+import PrimaryButton from "../../components/button";
 
 const features = [
   {
@@ -94,7 +95,9 @@ const WhyUs = () => {
               </div>
             </Col>
           ))}
-
+          <div style={{ marginBottom: 30 }}>
+            <PrimaryButton message="Pesan Bekalin Sekarang!" />
+          </div>
           {/* Gambar di bawah semua cards */}
           <Col xs={24} data-aos="fade-up">
             <div style={{ textAlign: "center", marginTop: "3rem" }}>
@@ -245,6 +248,9 @@ const WhyUs = () => {
               ))}
             </Row>
           </Col>
+          <div style={{ marginBottom: 30 }}>
+            <PrimaryButton message="Pesan Bekalin Sekarang!" />
+          </div>
         </Row>
       )}
     </div>

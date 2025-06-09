@@ -3,7 +3,7 @@ import { Row, Col } from "antd";
 import HeroImage from "../../assets/home/hero/1.png";
 import { useResponsive } from "../../helpers/responsive";
 import BackgroundImage from "../../assets/home/hero/bg.png";
-
+import PrimaryButton from "../../components/button";
 const Hero = () => {
   const { isMobile, isDesktop, isTablet } = useResponsive();
   const fontSizeTitle = isMobile
@@ -23,7 +23,7 @@ const Hero = () => {
     : "20px";
 
   const textAlign = isMobile ? "center" : "left";
-  const imageAlign = isMobile ? "center" : "right";
+  const imageAlign = isMobile ? "right" : "center";
 
   return (
     <div
@@ -68,6 +68,7 @@ const Hero = () => {
             Hadir dengan 900+ variasi menu, hadirkan solusi makan praktis,
             fleksibel, lezat dan HEMAT!
           </h2>
+          <PrimaryButton message="Pesan Bekalin Sekarang!"/>
         </Col>
 
         {/* Image Column */}

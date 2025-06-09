@@ -3,6 +3,7 @@ import { Card, Row, Col, Typography, Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import BackgroundImage from "../../assets/home/testimoni/bg.png";
 import { useResponsive } from "../../helpers/responsive";
+import PrimaryButton from "../../components/button";
 
 const { Title, Paragraph } = Typography;
 
@@ -127,6 +128,9 @@ const Testimoni = () => {
             </Col>
           );
         })}
+        <div style={{ marginTop: 20 }}>
+          <PrimaryButton message="Pesan Bekalin Sekarang!" />
+        </div>
       </Row>
     </div>
   );

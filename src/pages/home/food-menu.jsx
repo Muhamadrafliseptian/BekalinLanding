@@ -3,6 +3,7 @@ import { Row, Col, Card, Modal } from "antd";
 import menuImage from "../../assets/home/menu/1.png";
 import menuImage2 from "../../assets/home/menu/2.png";
 import { useResponsive } from "../../helpers/responsive";
+import PrimaryButton from "../../components/button";
 
 const menuList = [
   {
@@ -81,6 +82,9 @@ const FoodMenu = () => {
         ))}
       </Row>
 
+      <div style={{ marginTop: 30 }}>
+        <PrimaryButton message="Pesan Bekalin Sekarang!" />
+      </div>
       <Modal
         open={modalVisible}
         onCancel={() => setModalVisible(false)}
